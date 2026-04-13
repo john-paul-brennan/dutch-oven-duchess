@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes – Dutch Oven Duchess</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            site: 'rgb(254,186,209)',
+            'site-dark': 'rgb(230,150,180)',
+            'site-light': 'rgb(254,186,209)',
+            body: 'rgb(77,77,77)',
+          },
+          fontFamily: {
+            serif: ['Bitter', 'Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
+            sans: ['Lato', 'Helvetica Neue', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      color: rgb(77, 77, 77);
+      font-family: 'Bitter', Georgia, serif;
+    }
+
+    .site-color { color: rgb(200,100,140); }
+    .site-bg { background-color: rgb(254,186,209); }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav-link {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .section-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: rgb(77, 77, 77);
+    }
+
+    .filter-btn {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 8px 16px;
+      border: 1px solid #ddd;
+      cursor: pointer;
+      background: white;
+      color: rgb(77,77,77);
+    }
+
+    .filter-btn.active {
+      background: rgb(254,186,209);
+      border-color: rgb(254,186,209);
+      color: rgb(100,40,70);
+    }
+
+    .recipe-card:hover .recipe-title {
+      color: rgb(200,100,140);
+    }
+
+    .star { color: #F2B955; }
+
+    .post-category {
+      font-family: 'Lato', sans-serif;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      background: rgb(254,186,209);
+      color: rgb(100,40,70);
+      padding: 3px 8px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .footer-heading {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: rgb(100,40,70);
+    }
+
+    .footer-link {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: rgb(120,50,80);
+      line-height: 2;
+    }
+
+    .view-more-btn {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+      background: rgb(254,186,209);
+      color: rgb(100,40,70);
+      padding: 14px 28px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body class="bg-white">
+
+  <!-- Top Bar -->
+  <div class="site-bg text-center py-2"
+    style="font-family:'Lato',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:rgb(100,40,70);">
+    <span>OUR RECIPES.</span>
+    <span class="mx-3">YOUR INBOX.</span>
+    <a href="#" class="underline">SIGN UP</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 flex items-center justify-between h-16">
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="recipes.html" class="nav-link" style="color:rgb(200,100,140);border-bottom:2px solid rgb(200,100,140);padding-bottom:2px;">Recipes</a>
+      </div>
+      <a href="index.html" class="text-center">
+        <div style="font-family:'Bitter',serif;font-size:22px;font-weight:600;letter-spacing:1px;color:#222;">
+          Dutch Oven Duchess
+        </div>
+      </a>
+      <div class="flex items-center gap-8">
+        <a href="start-here.html" class="nav-link hidden md:inline">Start Here</a>
+        <svg class="hidden md:block w-4 h-4 text-gray-600 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      <button class="md:hidden flex flex-col justify-center gap-1.5 p-2" onclick="var m=document.getElementById('mobile-menu');m.classList.toggle('hidden');" aria-label="Menu">
+        <span class="block w-5 h-0.5 bg-gray-600"></span>
+        <span class="block w-5 h-0.5 bg-gray-600"></span>
+        <span class="block w-5 h-0.5 bg-gray-600"></span>
+      </button>
+      </div>
+    </div>
+  </nav>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden bg-white border-b border-gray-200 sticky top-16 z-40 md:hidden">
+    <div class="flex flex-col px-6 py-5 gap-5">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="recipes.html" class="nav-link">Recipes</a>
+      <a href="start-here.html" class="nav-link">Start Here</a>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <section class="site-bg py-12 text-center">
+    <p class="section-label mb-3" style="color:rgb(100,40,70);">Browse All</p>
+    <h1 style="font-family:'Bitter',serif;font-size:2.5rem;font-weight:600;color:rgb(100,40,70);">Recipes</h1>
+  </section>
+
+  <!-- Top Rated -->
+  <section class="py-10 bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <p class="section-label mb-6">Top Rated Recipes</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-10">
+
+        <a href="recipe-pot-roast.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="recipe-pot-roast.jpg" class="w-full h-44 object-cover" alt="Cabernet-Braised Pot Roast">
+              <div class="absolute top-2 left-2"><span class="post-category">Dutch Oven</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Cabernet-Braised Pot Roast</h3>
+            <div class="flex items-center gap-1 mb-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-pasta-vodka.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="recipe-pasta-vodka.jpg" class="w-full h-44 object-cover" alt="Pasta alla Vodka">
+              <div class="absolute top-2 left-2"><span class="post-category">Pasta</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Pasta alla Vodka</h3>
+            <div class="flex items-center gap-1 mb-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-chicken-noodle-soup.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="recipe-chicken-noodle-soup.jpg" class="w-full h-44 object-cover" alt="Dutch Oven Rotisserie Chicken Noodle Soup">
+              <div class="absolute top-2 left-2"><span class="post-category">Dutch Oven</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Dutch Oven Rotisserie Chicken Noodle Soup</h3>
+            <div class="flex items-center gap-1 mb-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-yellow-cake.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="recipe-yellow-cake.jpg" class="w-full h-44 object-cover" alt="Classic Yellow Cake with Chocolate Frosting">
+              <div class="absolute top-2 left-2"><span class="post-category">Dessert</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Classic Yellow Cake with Chocolate Frosting</h3>
+            <div class="flex items-center gap-1 mb-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- All Recipes Grid -->
+      <p class="section-label mb-6">All Recipes</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+        <a href="recipe-spring-pasta.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="recipe-spring-pasta.jpg" class="w-full h-44 object-cover" alt="Spring Pasta — Ravioli in Tomato Crème Fraîche">
+              <div class="absolute top-2 left-2"><span class="post-category">Pasta</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Spring Pasta — Ravioli in Tomato Crème Fraîche</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-salmon-chicken.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="recipe-salmon-chicken.jpg" class="w-full h-44 object-cover" alt="Weeknight Salmon &amp; Meal-Prep Roast Chicken">
+              <div class="absolute top-2 left-2"><span class="post-category">Meal Prep</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Weeknight Salmon &amp; Meal-Prep Roast Chicken</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-halloween-meatballs.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="recipe-halloween-meatballs.jpg" class="w-full h-44 object-cover" alt="Halloween Meatballs">
+              <div class="absolute top-2 left-2"><span class="post-category">Dinner</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Halloween Meatballs</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-grilled-chicken.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="recipe-grilled-chicken.jpg" class="w-full h-44 object-cover" alt="Sunday Grilled Chicken &amp; Mashed Potatoes">
+              <div class="absolute top-2 left-2"><span class="post-category">Dinner</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Sunday Grilled Chicken &amp; Mashed Potatoes</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-french-toast.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="recipe-french-toast.jpg" class="w-full h-44 object-cover" alt="French Toast with Homemade Honey Butter">
+              <div class="absolute top-2 left-2"><span class="post-category">Breakfast</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">French Toast with Homemade Honey Butter</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-lasagna.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="recipe-lasagna.jpg" class="w-full h-44 object-cover" alt="The Cheesiest Lasagna">
+              <div class="absolute top-2 left-2"><span class="post-category">Pasta</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">The Cheesiest Lasagna</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-salmon-two-ways.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="recipe-salmon-two-ways.jpg" class="w-full h-44 object-cover" alt="Salmon Two Ways">
+              <div class="absolute top-2 left-2"><span class="post-category">Dinner</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Salmon Two Ways</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-lemon-salmon.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="https://placehold.co/300x220/9b7c5e/fff?text=Lemon+Salmon" class="w-full h-44 object-cover" alt="Lemon Herb Salmon with Sun-Dried Tomato Orzo">
+              <div class="absolute top-2 left-2"><span class="post-category">Dinner</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Lemon Herb Salmon with Sun-Dried Tomato Orzo</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-chili.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="https://placehold.co/300x220/c8856b/fff?text=Chili" class="w-full h-44 object-cover" alt="Crock Pot Chili &amp; Cornbread Muffins">
+              <div class="absolute top-2 left-2"><span class="post-category">Slow Cooker</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Crock Pot Chili &amp; Cornbread Muffins</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-lemon-scones.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="https://placehold.co/300x220/f5c8d8/fff?text=Lemon+Scones" class="w-full h-44 object-cover" alt="Lemon Scones with Lemon Curd">
+              <div class="absolute top-2 left-2"><span class="post-category">Baking</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Lemon Scones with Lemon Curd</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-lettuce-wraps.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="https://placehold.co/300x220/8faa7c/fff?text=Lettuce+Wraps" class="w-full h-44 object-cover" alt="Turkey Lettuce Wraps">
+              <div class="absolute top-2 left-2"><span class="post-category">Lunch</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Turkey Lettuce Wraps</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-coq-au-vin.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="https://placehold.co/300x220/c8a882/fff?text=Coq+au+Vin" class="w-full h-44 object-cover" alt="Coq au Vin with Mashed Potatoes &amp; Lyonnaise Salad">
+              <div class="absolute top-2 left-2"><span class="post-category">Dinner</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Coq au Vin with Mashed Potatoes &amp; Lyonnaise Salad</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-honeycomb.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="https://placehold.co/300x220/9b7c5e/fff?text=Honeycomb" class="w-full h-44 object-cover" alt="Homemade Honeycomb Candy (Crunchie Dupe)">
+              <div class="absolute top-2 left-2"><span class="post-category">Dessert</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Homemade Honeycomb Candy (Crunchie Dupe)</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-wrap-bar.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="https://placehold.co/300x220/c8856b/fff?text=Wrap+Bar" class="w-full h-44 object-cover" alt="Ground Turkey Lettuce Wrap Bar">
+              <div class="absolute top-2 left-2"><span class="post-category">Lunch</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Ground Turkey Lettuce Wrap Bar</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-turkey-chili.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="https://placehold.co/300x220/8faa7c/fff?text=Turkey+Chili" class="w-full h-44 object-cover" alt="Turkey Chili">
+              <div class="absolute top-2 left-2"><span class="post-category">Dinner</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Turkey Chili</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-chicken-madeira.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="https://placehold.co/300x220/c8a882/fff?text=Chicken+Madeira" class="w-full h-44 object-cover" alt="Chicken Madeira / Marsala">
+              <div class="absolute top-2 left-2"><span class="post-category">Dinner</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Chicken Madeira / Marsala</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-homemade-soup.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="https://placehold.co/300x220/9b7c5e/fff?text=Chicken+Noodle" class="w-full h-44 object-cover" alt="Homemade Chicken Noodle Soup">
+              <div class="absolute top-2 left-2"><span class="post-category">Soup</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Homemade Chicken Noodle Soup</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-pot-roast-marrow.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="https://placehold.co/300x220/c8856b/fff?text=Pot+Roast+Marrow" class="w-full h-44 object-cover" alt="Classic Pot Roast with Beef Bone Marrow">
+              <div class="absolute top-2 left-2"><span class="post-category">Dutch Oven</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Classic Pot Roast with Beef Bone Marrow</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+        <a href="recipe-julia-coq-au-vin.html" style="display:block;">
+          <div class="recipe-card cursor-pointer">
+            <div class="relative mb-3">
+              <img src="https://placehold.co/300x220/c8a882/fff?text=Julia+Coq+au+Vin" class="w-full h-44 object-cover" alt="Julia Child’s Coq au Vin">
+              <div class="absolute top-2 left-2"><span class="post-category">Dinner</span></div>
+            </div>
+            <h3 class="recipe-title font-serif font-semibold text-base leading-snug mb-1" style="color:#333;">Julia Child’s Coq au Vin</h3>
+            <div class="flex items-center gap-1"><span class="star text-xs">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span style="font-family:'Lato',sans-serif;font-size:10px;color:#aaa;">1m reviews</span></div>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:rgb(210,120,155);" class="pt-10 pb-6">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <p class="footer-heading">Dutch Oven Duchess</p>
+          <div>
+            <a href="index.html" class="footer-link block">Blog</a>
+            <a href="about.html" class="footer-link block">About / Contact</a>
+            <a href="#" class="footer-link block">Work With Us</a>
+            <a href="#" class="footer-link block">Privacy Policy</a>
+            <a href="#" class="footer-link block">Dutch Oven Duchess Shop</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-heading">Food &amp; Recipes</p>
+          <div>
+            <a href="recipes.html" class="footer-link block">All Recipes</a>
+            <a href="#" class="footer-link block">Dinner</a>
+            <a href="#" class="footer-link block">Quick + Easy</a>
+            <a href="#" class="footer-link block">Meal Prep Recipes</a>
+          </div>
+        </div>
+        <div class="col-span-2">
+          <p class="footer-heading">Sign Up for Email Updates</p>
+          <div class="flex mb-4">
+            <input type="email" placeholder="Email Address" class="px-3 py-2 flex-1 text-sm"
+              style="font-family:'Lato',sans-serif;font-size:12px;border:none;outline:none;">
+            <button style="background:#F2B955;color:#fff;font-family:'Lato',sans-serif;font-size:11px;font-weight:700;padding:10px 18px;border:none;cursor:pointer;">GO</button>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-opacity-20 pt-6">
+        <div class="flex items-center justify-between">
+          <div style="font-family:'Bitter',serif;font-size:20px;font-weight:600;color:#fff;">Dutch Oven Duchess</div>
+          <p style="font-family:'Lato',sans-serif;font-size:11px;color:rgba(100,40,70,0.7);">© 2026 Dutch Oven Duchess · All Rights Reserved</p>
+          <div class="flex gap-4">
+            <a href="#" style="font-family:'Lato',sans-serif;font-size:11px;color:rgba(100,40,70,0.8);">Privacy Policy</a>
+            <a href="#" style="font-family:'Lato',sans-serif;font-size:11px;color:rgba(100,40,70,0.8);">Terms</a>
+          </div>
+        </div>
+        <p style="font-family:'Lato',sans-serif;font-size:10px;color:rgba(100,40,70,0.5);text-align:center;margin-top:16px;">
+          Unauthorized use and/or duplication of this material without express and written permission from this site's author and/or owner is strictly prohibited.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

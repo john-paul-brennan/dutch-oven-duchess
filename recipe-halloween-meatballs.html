@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halloween Meatballs &#8211; Dutch Oven Duchess</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { site: 'rgb(254,186,209)', body: 'rgb(77,77,77)' },
+          fontFamily: {
+            serif: ['Bitter','Georgia','serif'],
+            sans: ['Lato','Helvetica Neue','sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { color: rgb(77,77,77); font-family: 'Bitter', Georgia, serif; }
+    a { color: inherit; text-decoration: none; }
+    .nav-link { font-family:'Lato',sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:700; }
+    .section-label { font-family:'Lato',sans-serif; font-size:10px; letter-spacing:3px; text-transform:uppercase; font-weight:700; color:rgb(77,77,77); }
+    .post-category { font-family:'Lato',sans-serif; font-size:9px; letter-spacing:2px; text-transform:uppercase; font-weight:700; background:rgb(254,186,209); color:rgb(100,40,70); padding:3px 8px; display:inline-block; margin-bottom:12px; }
+    .footer-heading { font-family:'Lato',sans-serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; font-weight:700; margin-bottom:10px; color:rgb(100,40,70); }
+    .footer-link { font-family:'Lato',sans-serif; font-size:12px; color:rgb(120,50,80); line-height:2; }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- Top Bar -->
+  <div style="background:rgb(254,186,209);font-family:'Lato',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:rgb(100,40,70);" class="text-center py-2">
+    <span>OUR RECIPES.</span><span class="mx-3">YOUR INBOX.</span><a href="#" class="underline">SIGN UP</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 flex items-center justify-between h-16">
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="recipes.html" class="nav-link" style="color:rgb(200,100,140);border-bottom:2px solid rgb(200,100,140);padding-bottom:2px;">Recipes</a>
+      </div>
+      <a href="index.html">
+        <div style="font-family:'Bitter',serif;font-size:22px;font-weight:600;letter-spacing:1px;color:#222;">Dutch Oven Duchess</div>
+      </a>
+      <div class="flex items-center gap-8">
+        <a href="start-here.html" class="nav-link hidden md:inline">Start Here</a>
+        <svg class="hidden md:block w-4 h-4 text-gray-600 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+      <button class="md:hidden flex flex-col justify-center gap-1.5 p-2" onclick="var m=document.getElementById('mobile-menu');m.classList.toggle('hidden');" aria-label="Menu">
+        <span class="block w-5 h-0.5 bg-gray-600"></span>
+        <span class="block w-5 h-0.5 bg-gray-600"></span>
+        <span class="block w-5 h-0.5 bg-gray-600"></span>
+      </button>
+      </div>
+    </div>
+  </nav>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden bg-white border-b border-gray-200 sticky top-16 z-40 md:hidden">
+    <div class="flex flex-col px-6 py-5 gap-5">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="recipes.html" class="nav-link">Recipes</a>
+      <a href="start-here.html" class="nav-link">Start Here</a>
+    </div>
+  </div>
+
+  <!-- Recipe Header -->
+  <section class="py-10 bg-white">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <span class="post-category">Dinner</span>
+      <h1 style="font-family:'Bitter',serif;font-size:2.2rem;font-weight:600;color:#222;line-height:1.2;margin-bottom:16px;">Halloween Meatballs</h1>
+      <div class="flex items-center justify-center gap-3 mb-4" style="font-family:'Lato',sans-serif;font-size:11px;color:#aaa;letter-spacing:1px;">
+        <span style="color:#F2B955;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span>1m reviews</span>
+        <span>&#183;</span>
+        <a href="recipes.html" style="color:rgb(200,100,140);">&#8592; Back to Recipes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Image -->
+  <section class="bg-white mb-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <img src="recipe-halloween-meatballs.jpg" class="w-full object-cover" style="max-height:480px;" alt="Halloween Meatballs">
+    </div>
+  </section>
+
+  <!-- Recipe Content -->
+  <section class="pb-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <!-- Ingredients -->
+        <div class="col-span-1">
+          <p class="section-label mb-4">Ingredients</p>
+          <ul style="font-family:'Lato',sans-serif;font-size:14px;line-height:2;color:#555;list-style:disc;padding-left:18px;">
+            <li>Ground meat</li>
+            <li>Breadcrumbs</li>
+            <li>Egg</li>
+            <li>Seasonings</li>
+          </ul>
+        </div>
+
+        <!-- Instructions -->
+        <div class="md:col-span-2">
+          <p class="section-label mb-4">Instructions</p>
+          <ol style="font-family:'Lato',sans-serif;font-size:14px;line-height:1.9;color:#555;list-style:decimal;padding-left:18px;">
+            <li style="margin-bottom:16px;">Preheat oven to 400°F. In a large bowl, combine ground meat, breadcrumbs, egg, and your preferred seasonings (salt, pepper, garlic powder, Italian seasoning). Mix until just combined — don't overwork.</li>
+            <li style="margin-bottom:16px;">Roll into balls about 1.5 inches in diameter. You should get approximately 30 meatballs. Place on a parchment-lined baking sheet with space between each.</li>
+            <li style="margin-bottom:16px;">Bake for 18–22 minutes until cooked through and nicely browned. Internal temperature should reach 165°F.</li>
+            <li style="margin-bottom:16px;">Serve immediately — these are not for sharing.</li>
+          </ol>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:rgb(210,120,155);" class="pt-10 pb-6">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <p class="footer-heading">Dutch Oven Duchess</p>
+          <a href="index.html" class="footer-link block">Blog</a>
+          <a href="about.html" class="footer-link block">About / Contact</a>
+          <a href="#" class="footer-link block">Work With Us</a>
+          <a href="#" class="footer-link block">Privacy Policy</a>
+        </div>
+        <div>
+          <p class="footer-heading">Food &amp; Recipes</p>
+          <a href="recipes.html" class="footer-link block">All Recipes</a>
+          <a href="#" class="footer-link block">Dinner</a>
+          <a href="#" class="footer-link block">Quick + Easy</a>
+          <a href="#" class="footer-link block">Meal Prep Recipes</a>
+        </div>
+        <div class="col-span-2">
+          <p class="footer-heading">Sign Up for Email Updates</p>
+          <div class="flex mb-4">
+            <input type="email" placeholder="Email Address" class="px-3 py-2 flex-1 text-sm" style="font-family:'Lato',sans-serif;font-size:12px;border:none;outline:none;">
+            <button style="background:#F2B955;color:#fff;font-family:'Lato',sans-serif;font-size:11px;font-weight:700;padding:10px 18px;border:none;cursor:pointer;">GO</button>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-opacity-20 pt-6 flex flex-col md:flex-row items-center md:justify-between gap-3">
+        <div style="font-family:'Bitter',serif;font-size:20px;font-weight:600;color:#fff;">Dutch Oven Duchess</div>
+        <p style="font-family:'Lato',sans-serif;font-size:11px;color:rgba(100,40,70,0.7);">&#169; 2026 Dutch Oven Duchess &#183; All Rights Reserved</p>
+        <div class="flex gap-4">
+          <a href="#" style="font-family:'Lato',sans-serif;font-size:11px;color:rgba(100,40,70,0.8);">Privacy Policy</a>
+          <a href="#" style="font-family:'Lato',sans-serif;font-size:11px;color:rgba(100,40,70,0.8);">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Handles -->
+  <rect x="4" y="28" width="10" height="7" rx="3.5" fill="rgb(200,100,140)"/>
+  <rect x="50" y="28" width="10" height="7" rx="3.5" fill="rgb(200,100,140)"/>
+  <!-- Pot body -->
+  <rect x="12" y="28" width="40" height="24" rx="6" fill="rgb(254,186,209)"/>
+  <!-- Pot body bottom curve -->
+  <ellipse cx="32" cy="52" rx="20" ry="5" fill="rgb(240,160,195)"/>
+  <!-- Lid -->
+  <rect x="13" y="22" width="38" height="8" rx="4" fill="rgb(200,100,140)"/>
+  <!-- Lid knob -->
+  <ellipse cx="32" cy="20" rx="5" ry="4" fill="rgb(200,100,140)"/>
+  <ellipse cx="32" cy="18" rx="3" ry="2.5" fill="rgb(220,130,170)"/>
+  <!-- Shine -->
+  <ellipse cx="24" cy="36" rx="4" ry="6" fill="rgba(255,255,255,0.25)" transform="rotate(-15 24 36)"/>
+</svg>
